@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class RobotsDuel {
     private int healthRobot = 100;
@@ -50,14 +51,19 @@ public class RobotsDuel {
         String args1 = "" + args; //перетворюємо char в String
         int indexM = this.getGetShootRandomAlf().indexOf(args1); // Пошук символу у списку вбивчих кнопок
         if (indexM == -1) { //якщо не влучив
-            System.out.println("Ти промазав, перехід ходу");
+            System.out.println(" Промазав, перехід ходу");
 
         } else {
-            System.out.println("Вітаю! Ти влучив, перехід ходу");
+            System.out.println("Вітаю! Влучив, перехід ходу");
             this.setGetShootRandomAlf(this.getGetShootRandomAlf().replace(args1, "")); // деактивуємо вбивчу кнопку
             this.setHelthRobot(this.getHealthRobot() - 20); //віднімаємо здоров'я
-            System.out.println(this.getGetShootRandomAlf());//вбивчи кнопки
+
         }
+    }
+
+    public static String getInfoFromDisplay() { // зчитування з дісплею
+       Scanner scanner = new Scanner(System.in);
+       return scanner.next();
     }
 }
 

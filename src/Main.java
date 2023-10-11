@@ -8,7 +8,7 @@ public class Main {
         ArrayList<RobotsDuel> listOfRobots = new ArrayList(); //створюємо список з двох роботів
         for (int i = 0; i < 2; i++) {
             System.out.println("Введіть ім'я робота " + (i + 1) + ":");
-            String nameRb = Game.getInfoFromDisplay();// Отримуємо ім'я робота з консолі
+            String nameRb = RobotsDuel.getInfoFromDisplay();// Отримуємо ім'я робота з консолі
             listOfRobots.add(new RobotsDuel(nameRb));// Додаємо нового робота до списку
             System.out.println("Ім'я робота " + (i + 1) + " - " + listOfRobots.get(i).getNameRobot());
             System.out.println("Здоров'я робота " +  listOfRobots.get(i).getNameRobot()  + " - " + listOfRobots.get(i).getHealthRobot());
@@ -26,7 +26,7 @@ public class Main {
                 System.out.println("Для пострілу введіть одну з літер : Q, W, E, A, S, D, Z, X, C  або  P  для виходу з гри: ");
                  char letter;
                 while (true) { // Перевіряємо чи введена літер зі списку дозволених до тих пір, поки не буде введена граюча літера
-                    String shots = Game.getInfoFromDisplay().toUpperCase(Locale.ROOT);// зчитуємо введений рядок і переводимо його в верхній регістр
+                    String shots = RobotsDuel.getInfoFromDisplay().toUpperCase(Locale.ROOT);// зчитуємо введений рядок і переводимо його в верхній регістр
                     letter = shots.charAt(0); // беремо перший символ з введеного рядка
 
                     if (!allowedLetters.contains(shots)) { // якщо нема в списку дозволених літер
